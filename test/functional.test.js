@@ -3,6 +3,7 @@ const repeat = require('./../higherorderfunctions');
 const doubleAll = require('./../basicmap');
 const getShortMessages = require('./../basicfilter');
 const checkUsersValid = require('./../basiceverysome');
+const countWords = require('./../basicreduce');
 /* global define, it, describe, before, beforeEach, afterEach, after */
 
 describe('Higher order functions', () => {
@@ -58,13 +59,31 @@ describe('Basic Every Some', () => {
       { id: 3 }
     ];
 
-      // `checkUsersValid` is the function you'll define
+    // `checkUsersValid` is the function you'll define
     const testAllValid = checkUsersValid(goodUsers);
 
     expect(testAllValid([
       { id: 2 },
       { id: 1 },
-      { id: 4}
+      { id: 4 }
     ])).to.equal(false);
+  });
+});
+describe('Basic reduce', () => {
+  it('Should return the object', () => {
+    const inputWords = ['Apple', 'Banana', 'Apple', 'Durian', 'Durian', 'Durian'];
+    expect(countWords(inputWords)).to.be.deep.equal({
+      Apple: 2,
+      Banana: 1,
+      Durian: 3
+    });
+  });
+  it('Should return the object, one more apple', () => {
+    const inputWords = ['Apple', 'Banana', 'Apple', 'Durian', 'Durian', 'Durian', 'Apple'];
+    expect(countWords(inputWords)).to.be.deep.equal({
+      Apple: 3,
+      Banana: 1,
+      Durian: 3
+    });
   });
 });
