@@ -4,6 +4,7 @@ const doubleAll = require('./../basicmap');
 const getShortMessages = require('./../basicfilter');
 const checkUsersValid = require('./../basiceverysome');
 const countWords = require('./../basicreduce');
+const reduce = require('./../basicrecursion');
 /* global define, it, describe, before, beforeEach, afterEach, after */
 
 describe('Higher order functions', () => {
@@ -85,5 +86,19 @@ describe('Basic reduce', () => {
       Banana: 1,
       Durian: 3
     });
+  });
+});
+describe('Basic recursion', () => {
+  it('Shoudl return 6 the implemented reduce', () => {
+    const sumNumbers = reduce([1, 2, 3], function(prev, curr, index, arr) {
+      return prev + curr;
+    }, 0);
+    expect(sumNumbers).to.be.equal(6);
+  });
+  it('Shoudl return 7 the implemented reduce', () => {
+    const sumNumbers = reduce([1, 2, 4], function(prev, curr, index, arr) {
+      return prev + curr;
+    }, 0);
+    expect(sumNumbers).to.be.equal(7);
   });
 });
