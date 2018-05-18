@@ -10,6 +10,9 @@
     "deps": "npm install",
     "test": "mocha -u tdd"
   },
+  "engines": {
+    "node": ">=6.0.0"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
