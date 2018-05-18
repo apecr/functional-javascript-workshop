@@ -5,6 +5,7 @@ const getShortMessages = require('./../basicfilter');
 const checkUsersValid = require('./../basiceverysome');
 const countWords = require('./../basicreduce');
 const reduce = require('./../basicrecursion');
+const duckCount = require('./../basiccall');
 /* global define, it, describe, before, beforeEach, afterEach, after */
 
 describe('Higher order functions', () => {
@@ -100,5 +101,17 @@ describe('Basic recursion', () => {
       return prev + curr;
     }, 0);
     expect(sumNumbers).to.be.equal(7);
+  });
+});
+describe('Basic call', () => {
+  it('Should return one duck', () => {
+    var notDuck = Object.create({quack: true});
+    var duck = {quack: true};
+    expect(duckCount(duck, notDuck)).to.be.equal(1);
+  });
+  it('Should return two ducks', () => {
+    var notDuck = Object.create({quack: true});
+    var duck = {quack: true};
+    expect(duckCount(duck, duck, notDuck)).to.be.equal(2);
   });
 });
