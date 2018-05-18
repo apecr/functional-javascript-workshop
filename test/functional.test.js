@@ -6,6 +6,7 @@ const checkUsersValid = require('./../basiceverysome');
 const countWords = require('./../basicreduce');
 const reduce = require('./../basicrecursion');
 const duckCount = require('./../basiccall');
+const logger = require('./../partialapplication');
 /* global define, it, describe, before, beforeEach, afterEach, after */
 
 describe('Higher order functions', () => {
@@ -113,5 +114,15 @@ describe('Basic call', () => {
     var notDuck = Object.create({quack: true});
     var duck = {quack: true};
     expect(duckCount(duck, duck, notDuck)).to.be.equal(2);
+  });
+});
+describe('Partial application without binding', () => {
+  it('Should log with info at start', () => {
+    const info = logger('INFO:');
+    info('this is an info message');
+  });
+  it('Should log with warn at start', () => {
+    const warn = logger('WARN:');
+    warn('this is a warning message');
   });
 });
