@@ -8,7 +8,9 @@
   },
   "scripts": {
     "deps": "npm install",
-    "test": "mocha -u tdd"
+    "test": "./node_modules/istanbul/lib/cli.js cover ./node_modules/.bin/_mocha",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
+
   },
   "engines": {
     "node": ">=6.0.0"
@@ -18,6 +20,8 @@
   "license": "ISC",
   "devDependencies": {
     "chai": "^4.1.2",
+    "coveralls": "^3.0.1",
+    "istanbul": "^0.4.5",
     "mocha": "^5.1.1"
   }
 }
