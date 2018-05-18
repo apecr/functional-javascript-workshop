@@ -1,0 +1,6 @@
+projectKey=functional-javascript-workshop
+serverUrl=http://localhost:9000
+serverVersion=7.0.0.36138
+dashboardUrl=http://localhost:9000/dashboard/index/functional-javascript-workshop
+ceTaskId=AWNyPa1AxG-BwEcjVijM
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AWNyPa1AxG-BwEcjVijM

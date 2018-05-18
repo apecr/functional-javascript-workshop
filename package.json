@@ -9,8 +9,9 @@
   "scripts": {
     "deps": "npm install",
     "test": "./node_modules/istanbul/lib/cli.js cover ./node_modules/.bin/_mocha",
-    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
-
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
+    "coverage": "node_modules/.bin/istanbul cover --report lcovonly --report html --dir test-reports ./node_modules/.bin/_mocha",
+    "sonar": "sonar-scanner"
   },
   "engines": {
     "node": ">=6.0.0"
