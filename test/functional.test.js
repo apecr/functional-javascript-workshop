@@ -7,6 +7,7 @@ const countWords = require('./../basicreduce');
 const reduce = require('./../basicrecursion');
 const duckCount = require('./../basiccall');
 const logger = require('./../partialapplication');
+const arrayMap = require('./../implementmapwithreduce');
 /* global define, it, describe, before, beforeEach, afterEach, after */
 
 describe('Higher order functions', () => {
@@ -124,5 +125,15 @@ describe('Partial application without binding', () => {
   it('Should log with warn at start', () => {
     const warn = logger('WARN:');
     warn('this is a warning message');
+  });
+});
+describe('Implement map with reduce', () => {
+  it('Should multiply by two', () => {
+    const arrayDoubled = arrayMap([0, 1], value => value * 2);
+    expect(arrayDoubled).to.be.deep.equal([0, 2]);
+  });
+  it('Should multiply by three', () => {
+    const arrayTripled = arrayMap([0, 1, 2], value => value * 3);
+    expect(arrayTripled).to.be.deep.equal([0, 3, 6]);
   });
 });
