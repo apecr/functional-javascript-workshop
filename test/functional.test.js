@@ -9,8 +9,14 @@ const duckCount = require('./../basiccall');
 const logger = require('./../partialapplication');
 const arrayMap = require('./../implementmapwithreduce');
 const Spy = require('./../functionspies');
+const repeat2 = require('./../blockingeventloop');
+const upper = require('./../helloworld');
 /* global define, it, describe, before, beforeEach, afterEach, after */
-
+describe('Hello world', () => {
+  it('should return upperCase', () => {
+    expect(upper('hello')).to.be.equal('HELLO');
+  });
+});
 describe('Higher order functions', () => {
   it('Should get a 4', () => {
     let a = 0;
@@ -140,7 +146,7 @@ describe('Implement map with reduce', () => {
 });
 describe('Spy a function', () => {
   it('Should spy console.error', () => {
-    var spy = Spy(console, 'error');
+    var spy = new Spy(console, 'error');
 
     console.error('calling console.error');
     console.error('calling console.error');
@@ -149,11 +155,30 @@ describe('Spy a function', () => {
     expect(spy.count).to.be.equal(3);
   });
   it('Should spy console.log', () => {
-    var spy = Spy(console, 'log');
+    var spy = new Spy(console, 'log');
 
     console.log('calling console.log');
     console.log('calling console.log');
 
     expect(spy.count).to.be.equal(2);
+  });
+});
+
+describe('repeat challenge', () => {
+  it('Should call 20 times', () => {
+    let value = 0;
+    const increment = () => {
+      value++;
+    };
+    repeat2(increment, 20);
+    expect(value).to.be.equal(20);
+  });
+  it('Should call 200 times', () => {
+    let value = 0;
+    const increment = () => {
+      value++;
+    };
+    repeat2(increment, 200);
+    expect(value).to.be.equal(1);
   });
 });
