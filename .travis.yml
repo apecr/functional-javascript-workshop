@@ -14,7 +14,7 @@ addons:
   sonarcloud:
     organization: "apecr-github"
     token:
-      secure: "your_token_encrypted_with_travis_encrypt_tool"
+      secure: "sXagDSp5SH/tkEkbRtFI9vFd774XCOwFNqJk/24OsscDD7WuZuMpD8GGk4LTQknPio+2rk5w7EQOGMSpiEaGMyIaiM6vnw75EoVAPuGsY18bf2skYcyvGyWpxtaPUi4lnKmLkovdURf+pYoBmJMgHuVbFSXNT++GrRAxnXhQr7yCrF206bfSTlC0+IHeqKT8VKLBJsx1IIlKSGrHik9UeWSmlCCatNq9OOMN0jdtMgBUH9hMtwbVBmi9nuYwIp+bc1kFXQGie+IaTPXg2jXmdQi0MZvEof81V1EVqDqwY0Sp0Ud2OM9NdEg4+PGPW0aUXsqCLyRrbdvofjLbdrli2i95s4o8LQmdt6noiW1lsIVfGvw3N2F+hXcy8m5gARrHHP+WCJ4+Rm//D3mI87f2YRr8Qlms3KKbln9zLhB8V+D3ffC8G1a00zomC5ct++qwb1W9WsMCKsyYAQt8heMbx5h9ZitFmgKvA1z2A2fn0QZyjVvDYCP3S9kybHXgo7Kb1cXcsnmdpLsr6Q8PWY6WeHR+34uLxjHD5NM7gYGcsm6xNUxhCrFoWyJAkaHfphoQqWh94JGnsfy6s3153XRjQZPoKOTANsQ8BTpog6b3r83mSoxQmyxwjuIYsdFYp9ke9o67nIDoLL64wDb9LHrx3bRlS7UpawOIR/5mimqg2+c="
 jdk:
   - oraclejdk8
 script:
