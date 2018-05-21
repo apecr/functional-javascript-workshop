@@ -8,6 +8,7 @@ const reduce = require('./../basicrecursion');
 const duckCount = require('./../basiccall');
 const logger = require('./../partialapplication');
 const arrayMap = require('./../implementmapwithreduce');
+const Spy = require('./../functionspies');
 /* global define, it, describe, before, beforeEach, afterEach, after */
 
 describe('Higher order functions', () => {
@@ -135,5 +136,24 @@ describe('Implement map with reduce', () => {
   it('Should multiply by three', () => {
     const arrayTripled = arrayMap([0, 1, 2], value => value * 3);
     expect(arrayTripled).to.be.deep.equal([0, 3, 6]);
+  });
+});
+describe('Spy a function', () => {
+  it('Should spy console.error', () => {
+    var spy = Spy(console, 'error');
+
+    console.error('calling console.error');
+    console.error('calling console.error');
+    console.error('calling console.error');
+
+    expect(spy.count).to.be.equal(3);
+  });
+  it('Should spy console.log', () => {
+    var spy = Spy(console, 'log');
+
+    console.log('calling console.log');
+    console.log('calling console.log');
+
+    expect(spy.count).to.be.equal(2);
   });
 });
