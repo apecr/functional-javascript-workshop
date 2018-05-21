@@ -18,6 +18,7 @@ addons:
 jdk:
   - oraclejdk8
 script:
+  - npm run coveralls
   - sonar-scanner
 cache:
   directories:
