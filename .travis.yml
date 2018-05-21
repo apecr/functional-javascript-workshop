@@ -6,3 +6,19 @@ node_js:
   - "9.5.0"
   - "10.1.0"
 after_success: 'npm run coveralls'
+
+dist: trusty
+sudo: required
+
+addons:
+  sonarcloud:
+    organization: "apecr-github"
+    token:
+      secure: "your_token_encrypted_with_travis_encrypt_tool"
+jdk:
+  - oraclejdk8
+script:
+  - sonar-scanner
+cache:
+  directories:
+    - '$HOME/.sonar/cache'
