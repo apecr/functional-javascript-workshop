@@ -28,4 +28,4 @@ Try to perform as many operations as you can before the timeout fires!
       return repeat(operation, --num)
     }
     
-    module.exports = repeat
+    module.exports = repeat 
